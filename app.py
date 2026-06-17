@@ -73,7 +73,6 @@ def cadastrar_produto():
 
     conexao = obter_conexao()
     cursor = conexao.cursor()
-    cursor.execute('INSERT INTO produtos (nome, preco_venda, Drugquantidade_estoque) VALUES (?, ?, ?)', (nome, preco, estoque))
     cursor.execute('INSERT INTO produtos (nome, preco_venda, quantidade_estoque) VALUES (?, ?, ?)', (nome, preco, estoque))
     conexao.commit()
     conexao.close()
@@ -137,16 +136,12 @@ def capturar_lead():
     empresa = request.form['empresa']
     demanda = request.form['demanda']
     
-    # Aqui a engenharia do crescimento acontece:
-    # 1. Nós criamos uma mensagem personalizada para o seu WhatsApp
+    # Criar mensagem para WhatsApp
     mensagem_texto = f"Olá, sou o {nome} da empresa {empresa}. Solicito a tabela de atacado para a demanda de {demanda} de Luvas de Vaqueta Mista a R$ 15,00."
     
-    # 2. Link direto que abre o seu WhatsApp com a mensagem pronta que o cliente enviará
     # Substitua os zeros pelo SEU número de WhatsApp real (DDI + DDD + Número)
-    seu_numero_whatsapp = "5519995759141" 
+    seu_numero_whatsapp = "5519995759141"
     
-    link_redirecionamento = f"https://api.whatsapp.com/send?phone={seu_numero_whatsapp}&text={id_da_mensagem_se_houver_api...}"
-    # Como queremos que abra o seu zap de forma direta e limpa para você fechar a venda:
     import urllib.parse
     texto_codificado = urllib.parse.quote(mensagem_texto)
     link_final = f"https://api.whatsapp.com/send?phone={seu_numero_whatsapp}&text={texto_codificado}"
