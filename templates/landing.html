@@ -1,0 +1,109 @@
+HTML
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luvas de Vaqueta Mista | Distribuição Direta para Construtoras</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-50 font-sans antialiased text-slate-800">
+
+    <!-- Header / Nav -->
+    <header class="bg-slate-900 text-white py-4 border-b border-slate-800 shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center max-w-6xl">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl">🧤</span>
+                <span class="font-black text-xl tracking-wider text-amber-500">GLOVESTOCK B2B</span>
+            </div>
+            <div class="hidden md:flex space-x-4 text-sm font-medium text-slate-400">
+                <span>✓ Atendimento Nacional</span>
+                <span>✓ Faturamento CNPJ</span>
+                <span>✓ Estoque Imediato</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Foco Total na Dor e Solução) -->
+    <main class="container mx-auto px-4 max-w-6xl my-8 md:my-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Esquerda: Texto Persuasivo -->
+            <div class="lg:col-span-7 space-y-6">
+                <span class="bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                    Preço Direto de Distribuidor
+                </span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                    Reduza o custo de EPI da sua obra sem perder qualidade.
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Luva de Vaqueta Mista de alta resistência, ideal para serviços pesados, carga/descarga e solda. Abasteça seus canteiros de obras com <strong class="text-slate-900">estoque imediato</strong> e as melhores condições de frete do mercado.
+                </p>
+                
+                <!-- Benefícios Rápidos -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div class="flex items-start space-x-2">
+                        <span class="text-green-500 font-bold">✓</span>
+                        <p class="text-sm font-medium text-slate-700">Apenas R$ 15,00 o par (No lote)</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-green-500 font-bold">✓</span>
+                        <p class="text-sm font-medium text-slate-700">Emissão de Nota Fiscal imediata</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-green-500 font-bold">✓</span>
+                        <p class="text-sm font-medium text-slate-700">Envio para todo o Brasil</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-green-500 font-bold">✓</span>
+                        <p class="text-sm font-medium text-slate-700">Produto Homologado (Normas de Segurança)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direita: Formulário de Captura de Comprador -->
+            <div class="lg:col-span-5">
+                <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Solicitar Tabela de Preços</h3>
+                    <p class="text-xs text-slate-500 mb-6">Preencha os dados abaixo para receber o catálogo oficial e condições de frete direto no seu WhatsApp corporativo.</p>
+                    
+                    <!-- O formulário envia o lead para o nosso sistema e depois redireciona -->
+                    <form action="/capturar_lead" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Seu Nome</label>
+                            <input type="text" name="nome" required placeholder="Ex: Engenheiro Carlos"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">WhatsApp da Construtora</label>
+                            <input type="tel" name="whatsapp" required placeholder="Ex: (11) 99999-9999"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Nome da Construtora / CNPJ</label>
+                            <input type="text" name="empresa" required placeholder="Ex: Construtora Alfa LTDA"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Demanda Mensal Estimada</label>
+                            <select name="demanda" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                                <option value="Abaixo de 100 pares">Até 100 pares / mês</option>
+                                <option value="100 a 500 pares">100 a 500 pares / mês</option>
+                                <option value="Mais de 500 pares">Mais de 500 pares / mês</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" 
+                            class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-4 rounded-lg transition shadow-lg transform hover:-translate-y-0.5 flex justify-center items-center space-x-2">
+                            <span>RECEBER TABELA NO WHATSAPP</span>
+                            <span>➔</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
